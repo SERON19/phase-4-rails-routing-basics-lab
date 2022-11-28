@@ -33,17 +33,18 @@ RSpec.describe "Students", type: :request do
       ])
     end
   end
+
+   # remove skip: "bonus" to run the test for the bonus!
+   describe "GET /students/highest-grade" do
+    it 'returns the student with the highest grade' do
+      get '/students/highest-grade'
   
-  ## BONUS: un-comment out the code below to run the bonus test
+ 
 
-  # describe "GET /students/highest-grade" do
-  #   it 'returns the student with the highest grade' do
-  #     get '/students/highest-grade'
-
-  #     expect(response.body).to include_json({ 
-  #       first_name: 'Idris', last_name: 'Elba', grade: 105 
-  #     })
-  #   end
-  # end
+      expect(response.body).to include_json({ 
+        first_name: 'Idris', last_name: 'Elba', grade: 105 
+      })
+    end
+  end
   
 end
